@@ -1,32 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AdminMenuBar extends StatelessWidget {
   const AdminMenuBar({
     super.key,
   });
-  createDialogPage(BuildContext context) {
-    TextEditingController myController = TextEditingController();
-
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('Name'),
-            content: TextField(
-              controller: myController,
-            ),
-            actions: <Widget>[
-              MaterialButton(
-                elevation: 5,
-                child: const Text('Valider'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          );
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +32,36 @@ class AdminMenuBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
+              Icons.arrow_upward_outlined,
+              color: Color.fromARGB(255, 255, 98, 0),
+            ),
+            title: const Text(
+              'Axes',
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 255, 98, 0),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            )
+                          ]),
+                    );
+                  });
+            },
+          ),
+          ListTile(
+            leading: const Icon(
               Icons.person_add,
               color: Color.fromARGB(255, 255, 98, 0),
             ),
@@ -62,7 +70,72 @@ class AdminMenuBar extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             onTap: () {
-              createDialogPage(context);
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 255, 98, 0),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            )
+                          ]),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Ajouter un chauffeur",
+                              style: GoogleFonts.eczar(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            const TextField(
+                              decoration: InputDecoration(
+                                labelText: 'Nom',
+                                fillColor: Color.fromARGB(255, 255, 98, 0),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const TextField(
+                              decoration: InputDecoration(
+                                labelText: 'Numero de Telephone',
+                                fillColor: Color.fromARGB(255, 255, 98, 0),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shadowColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 255, 98, 0),
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  'Valider',
+                                  style: GoogleFonts.eczar(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
+                          ]),
+                    );
+                  });
             },
           ),
           ListTile(
@@ -74,7 +147,26 @@ class AdminMenuBar extends StatelessWidget {
               'Nouvelle destinatiom',
               style: TextStyle(color: Colors.white),
             ),
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 255, 98, 0),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            )
+                          ]),
+                    );
+                  });
+            },
           ),
           ListTile(
             leading: const Icon(
@@ -96,7 +188,26 @@ class AdminMenuBar extends StatelessWidget {
               'Reglages',
               style: TextStyle(color: Colors.white),
             ),
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 255, 98, 0),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            )
+                          ]),
+                    );
+                  });
+            },
           ),
           ListTile(
             leading: const Icon(

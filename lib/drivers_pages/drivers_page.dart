@@ -49,8 +49,11 @@ class _DriversPageState extends State<DriversPage> {
                       child: Column(children: [
                         ClipRRect(
                           borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(16.0),
-                              topRight: Radius.circular(16.0)),
+                            topLeft: Radius.circular(16.0),
+                            topRight: Radius.circular(16.0),
+                            bottomLeft: Radius.circular(16.0),
+                            bottomRight: Radius.circular(16.0),
+                          ),
                           child: Image.network(
                             "${gridMap.elementAt(index)['Image']}",
                             height: 250,

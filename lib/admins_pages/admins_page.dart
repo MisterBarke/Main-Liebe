@@ -15,7 +15,7 @@ class _AdminPageState extends State<AdminPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: AdminMenuBar(),
+      drawer: const AdminMenuBar(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color.fromARGB(255, 1, 23, 41),
@@ -149,8 +149,11 @@ class _InfosState extends State<Infos> {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0)),
+                  topLeft: Radius.circular(16.0),
+                  topRight: Radius.circular(16.0),
+                  bottomLeft: Radius.circular(16.0),
+                  bottomRight: Radius.circular(16.0),
+                ),
                 child: Image.network(
                   "${gridMap.elementAt(index)['Image']}",
                   height: 140,
@@ -212,7 +215,56 @@ class _InfosState extends State<Infos> {
                               color: Colors.white,
                             )),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showModalBottomSheet(
+                                  backgroundColor: Colors.transparent,
+                                  elevation: 0,
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return Container(
+                                        margin: const EdgeInsets.fromLTRB(
+                                            30, 00, 30, 10),
+                                        height: 5500,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          color: const Color.fromARGB(
+                                              255, 255, 98, 0),
+                                        ),
+                                        child: Column(children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(16.0),
+                                              topRight: Radius.circular(16.0),
+                                              bottomLeft: Radius.circular(16.0),
+                                              bottomRight:
+                                                  Radius.circular(16.0),
+                                            ),
+                                            child: Image.network(
+                                              "${gridMap.elementAt(index)['Image']}",
+                                              height: 250,
+                                              width: double.infinity,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          Padding(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Column(children: [
+                                                Text(
+                                                  "${gridMap.elementAt(index)['Nom']}",
+                                                  style: GoogleFonts.eczar(
+                                                      textStyle:
+                                                          const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20,
+                                                  )),
+                                                ),
+                                              ])),
+                                        ]));
+                                  });
+                            },
                             icon: const Icon(
                               Icons.open_in_new,
                               color: Colors.white,

@@ -36,7 +36,26 @@ class DriverMenuBar extends StatelessWidget {
               "Envoyer un message d'urgence !",
               style: TextStyle(color: Colors.white),
             ),
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 0, 64, 116),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            ),
+                          ]),
+                    );
+                  });
+            },
           ),
           ListTile(
             leading: const Icon(
@@ -58,7 +77,26 @@ class DriverMenuBar extends StatelessWidget {
               'Reglages',
               style: TextStyle(color: Colors.white),
             ),
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 100),
+                      height: 250,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 0, 64, 116),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10.0,
+                            )
+                          ]),
+                    );
+                  });
+            },
           ),
           ListTile(
             leading: const Icon(
