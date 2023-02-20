@@ -12,12 +12,12 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'STM',
-            style: GoogleFonts.dancingScript(
+            'YOUR BRAND',
+            style: GoogleFonts.eczar(
               textStyle: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 50,
+                fontSize: 40,
               ),
             ),
           ),
